@@ -22,13 +22,16 @@ def train_test_split(X, y, test_size = 0.3):
     train_X, test_X = np.asarray(newX[:][:trainIndex]),np.asarray(newX[:][trainIndex:])
     return train_X, test_X, train_y, test_y
 
+# Use sigmoid function as the kernel
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
-
+    
+# Derivative of the sigmoid function
 def sigmoid_prime(z):
     sig = sigmoid(z)
     return sig * (1 - sig)
 
+# Sum of squared value of a vector
 def sumsqr(a):
     return np.sum(a ** 2)
 
